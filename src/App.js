@@ -48,13 +48,12 @@ const App = () => {
           bg-main-bg dark:bg-main-dark-bg 
           navbar w-full'>
             <Navbar/>
-          </div>
          </div>
 
           <div>
             <Routes>
               {/* Daashboard */}
-              <Route path='/' element= {< Ecommerce />}/>
+              <Route path='/' element= {(< Ecommerce />)}/>
               <Route path='/ecommerce' element= {< Ecommerce />}/>
 
               {/* Pages */}
@@ -79,6 +78,7 @@ const App = () => {
               <Route path='/stacked' element= {< Stacked />}/>
               
             </Routes>
+          </div>
           </div>
 
         </div>
