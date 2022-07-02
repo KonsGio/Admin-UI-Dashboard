@@ -9,7 +9,7 @@ import './App.css'
 // type rafce to use es7 snipet
 
 const App = () => {
-  const activeMenu = false;
+  const activeMenu = true;
   return (
     <div>
       <BrowserRouter>
