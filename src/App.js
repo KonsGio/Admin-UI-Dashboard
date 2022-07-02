@@ -7,9 +7,12 @@ import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Ka
   Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
 import './App.css'
 // type rafce to use es7 snipet
+import { useStateContext } from './contexts/ContextProvider';
 
 const App = () => {
-  const activeMenu = true;
+  const {activeMenu} = useStateContext();
+
+
   return (
     <div>
       <BrowserRouter>
@@ -38,7 +41,7 @@ const App = () => {
             </div>
           )}
           <div className={
-            `dark:bg-main-bg bg-main-bg min-h-screen w-full ${activeMenu ? 
+            `dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${activeMenu ? 
             'md:ml-72' : 'flex-2'}`
           }>
           <div className='fixed md:static  
