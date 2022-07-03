@@ -6,14 +6,27 @@ import { Header } from '../components';
 
 const Orders = () => {
   return (
+    // Orders menu tab
     <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
       <Header category="Page" title="Orders" />
-      <GridComponent>
+      <GridComponent
+      // pupulate data coming from dummy 
+      id='gridcomp'
+      dataSource={ordersData}
+      // pagination
+      allowPaging
+      // sorting for categories
+      allowSorting
+      
+      >
         <ColumnsDirective>
           {ordersGrid.map((item,index) => (
           <ColumnDirective key={index} {...item} />
           ))}
         </ColumnsDirective>
+        {/* Next button for pagination */}
+        <Inject services ={[Resize, Sort, ContextMenu, Filter, Page, ExcelExport,
+        Edit, PdfExport]}/>
       </GridComponent>
     </div>
   )
