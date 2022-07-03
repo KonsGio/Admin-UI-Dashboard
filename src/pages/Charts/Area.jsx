@@ -28,7 +28,7 @@ const Area = () => {
         </ChartComponent>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Area;
+export default Area
