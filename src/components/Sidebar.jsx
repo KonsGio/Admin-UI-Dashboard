@@ -30,7 +30,7 @@ const Sidebar = () => {
         className='items-center gap-3 ml-3
         mt-4 flex text-xl font-extrabold 
         tracking-tight dark:text-white
-        text-slate-900'>
+        text-slate-900' style={{ color: currentColor }}>
           <SiShopware /><span> Dev Kgio Dashboard</span>
         </Link>
           <TooltipComponent content="Menu"
@@ -48,10 +48,10 @@ const Sidebar = () => {
           </button>
           </TooltipComponent>
       </div>
-      <div className='mt-10'>
+      <div className='mt-10' >
       {links.map((item) => (
         <div key={item.title}>
-          <p className='text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase'>
+          <p style={{ color: currentColor }} className=' m-3 mt-4 font-semibold uppercase'>
           {item.title}
           </p>
           {item.links.map((link) => (
