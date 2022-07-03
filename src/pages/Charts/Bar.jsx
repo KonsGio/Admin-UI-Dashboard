@@ -3,10 +3,10 @@ import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Leg
 
 import { barCustomSeries, barPrimaryXAxis, barPrimaryYAxis } from '../../data/dummy';
 import { Header } from '../../components';
-import { useStateContext } from '../../contexts/ContextProvider';
+// import { useStateContext } from '../../contexts/ContextProvider';
 
 const Bar = () => {
-  const { currentMode,currentColor } = useStateContext();
+  // const { currentMode,currentColor } = useStateContext();
 
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white rounded-3xl">
@@ -18,8 +18,8 @@ const Bar = () => {
           primaryYAxis={barPrimaryYAxis}
           chartArea={{ border: { width: 0 } }}
           tooltip={{ enable: true }}
-          background={currentMode === 'Dark' ? currentColor : '#fff'}
-          legendSettings={{ background: 'white' }}
+          // background={currentMode === 'Dark' ? currentColor : '#fff'}
+          // legendSettings={{ background: 'white' }}
         >
           <Inject services={[ColumnSeries, Legend, Tooltip, Category, DataLabel]} />
           <SeriesCollectionDirective>
