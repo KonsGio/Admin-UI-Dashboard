@@ -11,6 +11,7 @@ import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const NavButton = ({ title, customFunc, icon, color, dotColor}) => (
+  
   <TooltipComponent content={title} 
   position="BottomCenter">
       <button type='button' onClick={customFunc}
@@ -26,7 +27,9 @@ const NavButton = ({ title, customFunc, icon, color, dotColor}) => (
 )
 const Navbar = () => {
   const { activeMenu, setActiveMenu, handleClick, isClicked, setIsClicked, 
-  screenSize, setScreenSize} = useStateContext();
+  screenSize, setScreenSize, currentColor} = useStateContext();
+
+
 // Control when sidebar disappears for smaller devices
 useEffect(() => {
   const handleResize = () => setScreenSize
@@ -53,25 +56,25 @@ useEffect(() => {
         <NavButton title="Menu" 
         customFunc={() => setActiveMenu((prevActiveMenu) => 
         !prevActiveMenu)} 
-        color="blue" 
+        color={currentColor}
         icon={<AiOutlineMenu/>}/>
         
           <div className='flex'>
         
             <NavButton title="Cart" 
             customFunc={() => handleClick('cart')}
-            color="blue" 
+            color={currentColor} 
             icon={<FiShoppingCart/>}/>
 
             <NavButton title="Chat" 
             customFunc={() => handleClick('chat')}
             dotColor="#03C9D7" 
-            color="blue" 
+            color={currentColor} 
             icon={<BsChatLeft/>}/>
         
             <NavButton title="Notifications" 
             customFunc={() => handleClick('notification')}
-            color="blue" 
+            color={currentColor} 
             dotColor="#03C9D7" 
             icon={<RiNotification3Line/>}/>
 
