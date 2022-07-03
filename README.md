@@ -72,3 +72,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
  npm install --legacy-peer-deps for new dependencies installation
  
+-We are constantly fetching data from and dummy.js which is 
+    an API dummy.
