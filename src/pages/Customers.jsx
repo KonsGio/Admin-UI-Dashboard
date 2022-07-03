@@ -4,11 +4,14 @@ Edit, Toolbar, Sort, Filter,Search } from '@syncfusion/ej2-react-grids';
 import {customersData, customersGrid} from '../data/dummy' ;
 import { Header } from '../components';
 import { AddDialogFieldSettings } from '@syncfusion/ej2/gantt';
+import { useStateContext } from '../contexts/ContextProvider';
 
 
 const Customers = () => {
+  const { currentColor} = useStateContext();
+
   return (
-    <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
+    <div style={{ backgroundColor: currentColor }} className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
       <Header category="Page" title="Customers" />
       <GridComponent
       // pupulate data coming from dummy 

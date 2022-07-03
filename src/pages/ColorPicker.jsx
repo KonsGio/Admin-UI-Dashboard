@@ -1,7 +1,7 @@
 import React from 'react';
 import { ColorPickerComponent } from '@syncfusion/ej2-react-inputs';
-
 import { Header } from '../components';
+import { useStateContext } from '../contexts/ContextProvider';
 
 const change = (args) => {
   document.getElementById('preview').style.backgroundColor = args.currentValue.hex;
@@ -9,8 +9,12 @@ const change = (args) => {
 
 const CustomColorPicker = ({ id, mode }) => <ColorPickerComponent id={id} mode={mode} modeSwitcher={false} inline showButtons={false} change={change} />;
 
-const ColorPicker = () => (
-  <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
+const ColorPicker = () => {
+  const { currentColor} = useStateContext();
+
+  return (
+
+  <div style={{ backgroundColor: currentColor }} className="m-2 md:m-10 mt-24 p-2 md:p-10 rounded-3xl">
     <Header category="App" title="Color Picker" />
     <div className="text-center">
       <div id="preview" />
@@ -33,6 +37,6 @@ const ColorPicker = () => (
       </div>
     </div>
   </div>
-);
-
+)
+  }
 export default ColorPicker
