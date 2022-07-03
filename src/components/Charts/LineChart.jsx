@@ -19,7 +19,7 @@ const LineChart = () => {
       <Inject services = {[LineSeries,DateTime,Legend,Tooltip]}/>
       <SeriesCollectionDirective>
         {lineCustomSeries.map((item,index)=>
-         <SeriesDirective ket={index}{...item}/>)}
+         <SeriesDirective key={index}{...item}/>)}
       </SeriesCollectionDirective>
     </ChartComponent>
   )
